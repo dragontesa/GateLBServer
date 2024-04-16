@@ -1,0 +1,9 @@
+First completion, Load Balance Server(LBServer) to match gameserver
+1. LBServer has the map contains match informations for all running game servers
+2. The match information has game server game id(if in playing), server ip, port, player numbers
+3. LBServer waits to listen any game host(client) will try to connect for matching with a gameserver
+4. LBServer find a gameserver doesn't game playing from local game server matching map
+5. LBServer response the matched gameserver information to the client
+6. Client connect to the gameserver and say "The game server has one player" to LBServer
+7. LBServer update the local gameserver matching map as the gameserver's player count is increase 1, and it's going to be coninuously whenever a player join
+8. Client'll say "The Gameserver is not playing" to LBServer if whole players is disconnect from the game or the game is finished
